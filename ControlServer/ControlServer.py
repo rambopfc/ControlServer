@@ -4,7 +4,6 @@
 
 import socket
 import sys
-#from thread import *
 import _thread
 import threading
 import subprocess
@@ -23,19 +22,6 @@ except socket.error as e:
 
 s.listen(2)
 
-#Function for handling connections. This will be used to create threads
-#def clientthread(conn):
-#   while True:
-#        data = conn.recv(1024)
-#        print(str(data))
-#        if not data:
-#            break
-#        elif str(data) == "mute":
-#            subprocess.Popen("nircmd.exe mutesysvolume 1")
-#        elif str(data) == "low":
-#            subprocess.Popen("nircmd.exe changesysvolume -2000")
-#
-#    conn.close()
 
 while 1:
     conn, addr = s.accept()
@@ -46,19 +32,6 @@ while 1:
         break
     
 
-    #wait to accept a connection - blocking call
-#	conn, addr = s.accept()
-#	data = conn.recv(9999)
-#    socket_file = conn.makefile()
-
-
-#    print(value)
 
 conn.close()
 s.close()
-#threading.Thread(target=clientthread, args=(conn)).start()
-
-#        elif str(data) == "mute":
-#            subprocess.Popen("nircmd.exe mutesysvolume 1")
-#        elif str(data) == "low":
-#            subprocess.Popen("nircmd.exe changesysvolume -2000")
