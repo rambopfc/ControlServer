@@ -4,8 +4,6 @@
 
 import socket
 import sys
-import _thread
-import threading
 import subprocess
 import struct
 
@@ -26,7 +24,7 @@ s.listen(2)
 while 1:
     conn, addr = s.accept()
     data = conn.recv(9999)
-    subprocess.Popen("nircmd.exe mutesysvolume 1")
+    subprocess.Popen("C:\nircmd.exe mutesysvolume 1")
     conn.close()
     if not data:
         break
